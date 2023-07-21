@@ -8,24 +8,38 @@ font-family: IBM Plex Sans;
 
 .footer-navs{
     p{
-    padding: 0.5rem 1rem;
-    margin: 0;
-    margin-right: 1rem;
-    border-radius: 90px;
-    border: 1px solid #E7ECEF;
-    font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 21px;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        margin: 0;
+        margin-right: 1rem;
+        border-radius: 90px;
+        border: 1px solid #E7ECEF;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 21px;
+        transition: all 0.2s ease-in-out;
+    }
+    p:hover{
+        color: #31C1BF;
     }
 }
 .footer-social{
     a{
-    
     margin: 0;
     margin-right: 1rem;
-   
+    svg{
+        height: 24px;
+        width: 24px;
+        transition: all 0.2s ease-in-out;  
     }
+    }
+    a:hover{
+        svg{
+        height: 30px;
+        width: 30px;
+    }
+}
 }
 .token-col{
     color: #404B51;

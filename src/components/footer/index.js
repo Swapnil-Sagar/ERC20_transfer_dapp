@@ -1,14 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import {
-	FaAngleDown,
-	FaChevronDown,
-	FaDiscord,
-	FaTwitter,
-	FaTelegram,
-	FaGithub,
-	FaMedium,
-} from "react-icons/fa";
+import { FaChevronDown, FaDiscord, FaTwitter, FaTelegram, FaGithub } from "react-icons/fa";
 import { TbCopy } from "react-icons/tb";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { SiCoinmarketcap } from "react-icons/si";
