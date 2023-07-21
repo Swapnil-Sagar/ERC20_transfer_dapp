@@ -1,0 +1,15 @@
+
+
+.btn-primary{
+    border-radius: 90px;
+background: #31C1BF;
+color: #FFF;
+text-align: center;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px;
+border: none;
+width: fit-content;
+padding: 6px 16px;
+}

@@ -1,0 +1,70 @@
+import Styled from "styled-components";
+
+export const FooterContainer = Styled.footer`
+padding: 1rem 6rem 2rem 6rem;
+background: #F4F6F8;
+color: #1B2022;
+font-family: IBM Plex Sans;
+
+.footer-navs{
+    p{
+    padding: 0.5rem 1rem;
+    margin: 0;
+    margin-right: 1rem;
+    border-radius: 90px;
+    border: 1px solid #E7ECEF;
+    font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 21px;
+    }
+}
+.footer-social{
+    a{
+    
+    margin: 0;
+    margin-right: 1rem;
+   
+    }
+}
+.token-col{
+    color: #404B51;
+font-family: IBM Plex Sans;
+font-size: 13px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px; 
+}
+
+.coin-row{
+    img{
+        width: 24px;
+    }
+}
+
+.rights{
+    color: #ABB7BD;
+font-family: IBM Plex Sans;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px;
+}
+
+.terms{
+color: #404B51;
+font-family: IBM Plex Sans;
+font-size: 13px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px;
+li{
+    list-style: none;    
+}
+}
+
+.dot{
+    color: #C8CFD3;
+}
+
+`;
