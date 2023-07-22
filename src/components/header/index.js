@@ -85,7 +85,7 @@ const Header = () => {
 							<span className='mx-1'>0</span>
 							<FaChevronDown size={14} />
 						</DropdownToggle>
-						<DropdownMenu right>
+						<DropdownMenu>
 							<DropdownItem href='/'>Sperax dapp</DropdownItem>
 							<DropdownItem href='/'>Demeter dapp</DropdownItem>
 						</DropdownMenu>

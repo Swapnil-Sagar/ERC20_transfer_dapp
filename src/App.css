@@ -20,3 +20,8 @@ transition: all 0.2s ease-in-out;
    
 }
 
+.btn-primary:focus {
+    background: #3ab1ab; 
+   
+}
+
