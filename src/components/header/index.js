@@ -20,15 +20,12 @@ import dropdownLogo from "../../assets/spa.svg";
 import { HeaderContainer } from "./style";
 
 const Header = ({ connect, active, disconnect, account }) => {
-	// State for the dropdown
 	const [dropdownOpen, setDropdownOpen] = React.useState(false);
 	const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
 	return (
 		<HeaderContainer>
 			<Navbar light expand='md' className='d-flex justify-content-between'>
-				{/* Left side of the header */}
-
 				<Nav className='me-5 d-flex align-items-center' navbar>
 					<NavItem>
 						<NavLink className='fw-bolder' href='/'>
@@ -71,11 +68,9 @@ const Header = ({ connect, active, disconnect, account }) => {
 					</NavItem>
 				</Nav>
 
-				{/* Right side of the header */}
 				<div className='d-flex align-items-center'>
 					<Button className='mx-2 btn-primary'>Buy SPA & USDs</Button>
 
-					{/* Pill shaped dropdown */}
 					<Dropdown className='mx-2' isOpen={dropdownOpen} toggle={toggleDropdown}>
 						<DropdownToggle
 							color='light'

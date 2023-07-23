@@ -9,7 +9,6 @@ import { toast } from "react-hot-toast";
 import { ellipsis } from "../../utils/utils";
 import { UncontrolledTooltip } from "reactstrap";
 
-// const Account = process.env.REACT_APP_ACCOUNT;
 const PrivateKey = process.env.REACT_APP_PRIVATE_KEY;
 const RpcHttpUrl = process.env.REACT_APP_RPC_HTTP_GORELI_URL;
 
