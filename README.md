@@ -1,6 +1,8 @@
-# ERC20 Transfer App
+# ERC20 Transfer dApp
 
-The ERC20 Transfer App is a simple web application that allows you to fetch and display token balances, as well as transfer wETH (an ERC20 token) to a recipient address. The app includes validation for Ethereum addresses to ensure the accuracy of transactions. It is designed for use on the Goreli Testnet and requires Metamask to interact with the Ethereum network.
+![ERC20 Transfer dApp](./src/assets/appShot.png)
+
+The ERC20 Transfer dApp is a simple web application that allows you to fetch and display token balances, as well as transfer ERC20 token. The app includes validation for Ethereum addresses to ensure the accuracy of transactions. It is designed for use on the Goreli Testnet and requires Metamask to interact with the Ethereum network.
 
 ## Features
 

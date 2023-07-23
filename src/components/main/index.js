@@ -34,9 +34,11 @@ const showInfo = (info, type) => {
 				<span id='infoCard'>{info}</span>
 			</Card>
 			{console.log(info, type)}
-			<UncontrolledTooltip placement='bottom' target='infoCard'>
-				{type}
-			</UncontrolledTooltip>
+			{type && (
+				<UncontrolledTooltip placement='bottom' target='infoCard'>
+					{type}
+				</UncontrolledTooltip>
+			)}
 		</>
 	);
 };
@@ -76,7 +78,10 @@ const Main = ({ account }) => {
 					toast.error("Something went wrong! Please check log for details.");
 				} else {
 					console.log("transaction submitted ", hash);
-					setInfo("Transaction submitted. Hash : " + ellipsis(hash.toString(), 40), hash);
+					setInfo(
+						"Transaction submitted. Hash : " + ellipsis(hash.toString(), 40),
+						hash.toString()
+					);
 				}
 			});
 		} catch (e) {
