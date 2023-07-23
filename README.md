@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# ERC20 Transfer App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The ERC20 Transfer App is a simple web application that allows you to fetch and display token balances, as well as transfer wETH (an ERC20 token) to a recipient address. The app includes validation for Ethereum addresses to ensure the accuracy of transactions. It is designed for use on the Goreli Testnet and requires Metamask to interact with the Ethereum network.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Fetch and display token balance
+- Transfer wETH to a recipient address
+- Validation for Ethereum addresses
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The ERC20 Transfer App is built using the following technologies and libraries:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. React - A popular JavaScript library for building user interfaces.
+2. Reactstrap - A set of React components that provide Bootstrap 4 elements and styles.
+3. Web3 - A JavaScript library for interacting with the Ethereum blockchain and smart contracts.
+4. Web3-react - A library that enables seamless integration of Web3 with React applications.
+5. React Hot Toast - A toast notification library for React that provides non-blocking notifications.
+6. React Icons - A library that offers a collection of popular icon packs as React components.
+7. Styled Components - A CSS-in-JS library that allows writing CSS styles using JavaScript.
 
-### `npm test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Before using the ERC20 Transfer App, make sure you have the following:
 
-### `npm run build`
+- Metamask wallet with your Ethereum account private key
+- Some wETH tokens in your wallet for testing purposes
+- Access to the Goreli Testnet
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Follow these instructions to get started with the ERC20 Transfer App:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Connect Metamask Wallet**: Launch the app and connect your Metamask wallet to interact with the app and sign transactions.
 
-### `npm run eject`
+2. **Configure .env File**: Add your private key to the .env file provided in the project to enable transaction signing.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Enter Contract Address**: Enter a valid contract address deployed on the Goreli Testnet to fetch the token balance.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Enter Recipient Address and Amount**: Provide the recipient's Ethereum address and the amount of wETH you want to transfer.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. **Transfer wETH**: After entering the required details, initiate the transfer. You will receive a transaction hash upon successful transfer, which you can verify on Etherscan for the Goreli Testnet.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## How to Get wETH
 
-## Learn More
+If you don't have wETH tokens, here are the steps to obtain them:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Obtain GoreliETH**: Get GoreliETH from any faucet available for the Goreli Testnet.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Convert to wETH**: Use the Uniswap DEX at https://app.uniswap.org/ to convert your GoreliETH into wETH.
 
-### Code Splitting
+3. **Import wETH to Metamask**: Import the wETH token to your Metamask wallet using the address: 0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. **Fetch Balance**: You can use the same address (0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6) to fetch your wETH token balance.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy transferring and managing your wETH tokens with the ERC20 Transfer App! If you encounter any issues or have suggestions for improvement, feel free to open an issue on this GitHub repository. Your feedback is highly appreciated.

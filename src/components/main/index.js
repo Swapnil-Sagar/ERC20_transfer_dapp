@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { MainContainer } from "./style";
 import BalanceCard from "./balance";
 import TransferCard from "./transfer";
@@ -7,8 +7,9 @@ import Web3 from "web3";
 import ContractAbi from "../../utils/contractAbi.json";
 import { toast } from "react-hot-toast";
 import { ellipsis } from "../../utils/utils";
+import { UncontrolledTooltip } from "reactstrap";
 
-const Account = process.env.REACT_APP_ACCOUNT;
+// const Account = process.env.REACT_APP_ACCOUNT;
 const PrivateKey = process.env.REACT_APP_PRIVATE_KEY;
 const RpcHttpUrl = process.env.REACT_APP_RPC_HTTP_GORELI_URL;
 
@@ -26,11 +27,17 @@ const showBalance = (balance) => {
 	);
 };
 
-const showInfo = (info) => {
+const showInfo = (info, type) => {
 	return (
-		<Card className='errorCard d-flex justify-content-between align-items-center'>
-			<span>{info}</span>
-		</Card>
+		<>
+			<Card className='errorCard d-flex justify-content-between align-items-center'>
+				<span id='infoCard'>{info}</span>
+			</Card>
+			{console.log(info, type)}
+			<UncontrolledTooltip placement='bottom' target='infoCard'>
+				{type}
+			</UncontrolledTooltip>
+		</>
 	);
 };
 
@@ -44,10 +51,9 @@ const Main = ({ account }) => {
 
 	async function transfer() {
 		setLoading(true);
-		//get nonce
-		console.log(tokenAddress, receiverAddress, transferAmount, account, Account);
+		console.log(tokenAddress, receiverAddress, transferAmount, account);
 		try {
-			const nonce = await web3.eth.getTransactionCount(Account, "latest");
+			const nonce = await web3.eth.getTransactionCount(account, "latest");
 			const value = web3.utils.toWei(transferAmount.toString(), "Ether");
 			const tokenContract = new web3.eth.Contract(ContractAbi, tokenAddress);
 			const data = tokenContract.methods.transfer(receiverAddress, value).encodeABI();
@@ -57,7 +63,7 @@ const Main = ({ account }) => {
 				to: receiverAddress,
 				value: "0x00",
 				gasLimit: 6721975,
-				gasPrice: 10,
+				gasPrice: 100,
 				nonce: nonce,
 				data: data,
 			};
@@ -67,28 +73,31 @@ const Main = ({ account }) => {
 			web3.eth.sendSignedTransaction(signTrx.rawTransaction, function (error, hash) {
 				if (error) {
 					console.log("Something went wrong", error);
+					toast.error("Something went wrong! Please check log for details.");
 				} else {
 					console.log("transaction submitted ", hash);
-					// window.alert("Transaction submitted. Hash : " + hash);
-					setInfo("Transaction submitted. Hash : " + ellipsis(hash.toString(), 40));
+					setInfo("Transaction submitted. Hash : " + ellipsis(hash.toString(), 40), hash);
 				}
 			});
 		} catch (e) {
 			console.log("transferError", e);
+			if (!account) setInfo("Please connect your wallet");
+			if (!receiverAddress) setInfo("Please enter a receiver address");
+			else toast.error("Something went wrong! Please check log for details.");
 		}
 	}
 	async function getBalance() {
 		try {
-			console.log("getbalance", tokenAddress, Account, account);
 			const tokenContract = new web3.eth.Contract(ContractAbi, tokenAddress);
-			const result = await tokenContract.methods.balanceOf(Account).call();
+			const result = await tokenContract.methods.balanceOf(account).call();
 
 			const format = web3.utils.fromWei(result);
 			console.log(result, format, typeof result);
 			setBalance(format);
 		} catch (e) {
 			console.log(e);
-			toast.error("Something went wrong! Please check log for details.");
+			if (!account) toast.error("Please connect your wallet");
+			else toast.error("Something went wrong! Please check log for details.");
 		}
 	}
 
@@ -101,12 +110,15 @@ const Main = ({ account }) => {
 				setBalance={setBalance}
 				setInfo={setInfo}
 			/>
-			{info && showInfo(info)}
 			{balance && showBalance(balance)}
+			{info && showInfo(info)}
 			<TransferCard
 				setReceiverAddress={setReceiverAddress}
 				setTransferAmount={setTransferAmount}
 				transfer={transfer}
+				receiverAddress={receiverAddress}
+				setInfo={setInfo}
+				transferAmount={transferAmount}
 			/>
 		</MainContainer>
 	);

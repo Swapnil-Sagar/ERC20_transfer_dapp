@@ -7,7 +7,7 @@ import { useWeb3React } from "@web3-react/core";
 import { injected } from "../utils/connector";
 
 const Home = () => {
-	const { active, account, chainId, activate, deactivate } = useWeb3React();
+	const { active, account, activate, deactivate } = useWeb3React();
 
 	async function connect() {
 		await activate(injected);
