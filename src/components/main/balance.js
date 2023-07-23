@@ -3,25 +3,25 @@ import { BalanceWrap } from "./style";
 import { Button, Card, Input, Label } from "reactstrap";
 import Web3 from "web3";
 
-const BalanceCard = ({ setTokenAddress, tokenAddress, setBalance, getBalance, setError }) => {
+const BalanceCard = ({ setTokenAddress, tokenAddress, setBalance, getBalance, setInfo }) => {
 	const isValidAddress = () => {
 		try {
 			const web3 = new Web3();
 			web3.utils.toChecksumAddress(tokenAddress);
 			getBalance();
 		} catch (e) {
-			setError("Please enter correct Ethereum Address!");
+			setInfo("Please enter correct Ethereum Address!");
 		}
 	};
 
 	const handleSetAddress = (value) => {
-		setError("");
+		setInfo("");
 		setBalance("");
 		setTokenAddress(value);
 	};
 
 	const handleSubmit = () => {
-		if (!tokenAddress) setError("Address cannot be empty!");
+		if (!tokenAddress) setInfo("Address cannot be empty!");
 		else isValidAddress();
 	};
 

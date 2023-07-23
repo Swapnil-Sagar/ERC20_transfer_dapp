@@ -9,6 +9,7 @@ import {
 	DropdownToggle,
 	DropdownMenu,
 	DropdownItem,
+	UncontrolledTooltip,
 } from "reactstrap";
 import { FaChevronDown } from "react-icons/fa";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
@@ -18,7 +19,7 @@ import logo from "../../assets/logo.svg";
 import dropdownLogo from "../../assets/spa.svg";
 import { HeaderContainer } from "./style";
 
-const Header = () => {
+const Header = ({ connect, active, disconnect, account }) => {
 	// State for the dropdown
 	const [dropdownOpen, setDropdownOpen] = React.useState(false);
 	const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
@@ -91,7 +92,20 @@ const Header = () => {
 						</DropdownMenu>
 					</Dropdown>
 
-					<Button className='mx-2 btn-primary'>Connect wallet</Button>
+					{!active ? (
+						<Button className='mx-2 btn-primary' onClick={connect}>
+							Connect wallet
+						</Button>
+					) : (
+						<>
+							<Button className='mx-2 btn-primary' id='disconnectBtn' onClick={disconnect}>
+								Disconnect
+							</Button>
+							<UncontrolledTooltip placement='bottom' target='disconnectBtn'>
+								{account}
+							</UncontrolledTooltip>
+						</>
+					)}
 					<Button className='theme-toggle-btn mx-2'>
 						<LuSunDim size={20} />
 					</Button>
