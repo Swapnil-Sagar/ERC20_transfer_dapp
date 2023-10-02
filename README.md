@@ -44,7 +44,7 @@ Follow these instructions to get started with the ERC20 Transfer App:
 
 5. **Transfer wETH**: After entering the required details, initiate the transfer. You will receive a transaction hash upon successful transfer, which you can verify on Etherscan for the Goreli Testnet.
 
-## How to Get wETH
+## How to Get wETH Token
 
 If you don't have wETH tokens, here are the required steps to obtain them:
 
