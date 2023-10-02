@@ -46,7 +46,7 @@ Follow these instructions to get started with the ERC20 Transfer App:
 
 ## How to Get wETH
 
-If you don't have wETH tokens, here are the steps to obtain them:
+If you don't have wETH tokens, here are the requierd steps to obtain them:
 
 1. **Obtain GoreliETH**: Get GoreliETH from any faucet available for the Goreli Testnet.
 
